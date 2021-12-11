@@ -24,6 +24,8 @@
  */
 const sections = [];
 const navElement = document.getElementById("navbar__list");
+build();
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -104,4 +106,3 @@ function updateSectionElements() {
   }
 }
 
-build();
