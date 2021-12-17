@@ -16,4 +16,4 @@ you can add new sections so you speak about what's your business features
 
 ## License 
 
-[GPL-3.0]("https://opensource.org/licenses/GPL-3.0")
++ [GPL-3.0]("https://opensource.org/licenses/GPL-3.0")
