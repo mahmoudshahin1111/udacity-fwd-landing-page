@@ -59,22 +59,21 @@ function buildNavSections() {
 // Add class 'active' to section when near top of viewport
 function activeSection(section) {
   section.sectionElement.classList.add("your-active-class");
-  section.anchorElement.classList.add('menu__link__active');
+  section.anchorElement.classList.add("menu__link__active");
 }
 function deActiveSection(section) {
   section.sectionElement.classList.remove("your-active-class");
-  section.anchorElement.classList.remove('menu__link__active');
+  section.anchorElement.classList.remove("menu__link__active");
 }
 function isSectionInViewport(section) {
   const sectionRect = section.sectionElement.getBoundingClientRect();
-  console.log(sectionRect.top);
-  return sectionRect.top >= 0 && sectionRect.top   *  1.5 <= (window.innerHeight || document.documentElement.innerHeight);
+  return sectionRect.top >= 0 && sectionRect.top * 1.5 <= (window.innerHeight || document.documentElement.innerHeight);
 }
 // Scroll to anchor ID using scrollTO event
 function scrollToSection(sectionElement) {
-    const sectionTopOffset = sectionElement.getBoundingClientRect().top;
-    const navElementHeight = navElement.getBoundingClientRect().height;
-    window.scrollBy({ top: sectionTopOffset - navElementHeight, behavior: "smooth" });
+  const sectionTopOffset = sectionElement.getBoundingClientRect().top;
+  const navElementHeight = navElement.getBoundingClientRect().height;
+  window.scrollBy({ top: sectionTopOffset - navElementHeight, behavior: "smooth" });
 }
 
 /**
@@ -91,7 +90,8 @@ function build() {
 }
 // Scroll to section on link click
 function onSectionLinkClicked(e, sectionElement) {
-    scrollToSection(sectionElement);
+  e.preventDefault();
+  scrollToSection(sectionElement);
 }
 // Set sections as active
 function updateSectionElements() {
@@ -99,10 +99,8 @@ function updateSectionElements() {
     const section = sections[i];
     if (isSectionInViewport(section)) {
       activeSection(section);
-    } 
-    else {
+    } else {
       deActiveSection(section);
     }
   }
 }
-
